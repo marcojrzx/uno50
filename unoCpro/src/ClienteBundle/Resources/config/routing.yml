@@ -1,0 +1,7 @@
+cliente_homepage:
+    path:     /
+    defaults: { _controller: ClienteBundle:Default:index }
+
+cliente_a:
+    path:     /a
+    defaults: { _controller: ClienteBundle:Default:comprar }

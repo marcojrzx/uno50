@@ -1,0 +1,45 @@
+Comprar publicidad
+<div class="fos_user_user_show">
+    <p>{{ 'Nombre '|trans }}: {{ user.nombre }} {{ user.ApellidoPaterno }} {{ user.ApellidoMaterno }}</p>
+    <p>{{ 'Usuario '|trans }}: {{ user.username }}</p>
+
+    <p>{{ 'Empresa '|trans }}: {{ user.nombreEmpresa }}</p>
+</div>
+
+{% block body %}
+    <h1>Producto list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrep</th>
+                <th>Descripcionp</th>
+                <th>Precio1</th>
+                <th>Precio2</th>
+                <th>Precio3</th>
+                <th>Edicion</th>
+                <th>Comprado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+            <tr>
+                <td><a href="{{ path('producto_show', { 'id': producto.id }) }}">{{ producto.id }}</a></td>
+                <td>{{ producto.nombreP }}</td>
+                <td>{{ producto.descripcionP }}</td>
+                <td>{{ producto.precio1 }}</td>
+                <td>{{ producto.precio2 }}</td>
+                <td>{{ producto.precio3 }}</td>
+                <td>{{ producto.edicion }}</td>
+                <td>{% if producto.comprado %}Yes{% else %}No{% endif %}</td>
+                <td><a href="{{ path('producto_show', { 'id': producto.id }) }}">comprar</a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
